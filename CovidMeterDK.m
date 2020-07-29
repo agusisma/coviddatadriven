@@ -34,11 +34,6 @@ dt  = 0.01;                                  % time steps
 t   = dt:dt:tf;
 cc  = [.1 .2 .3 .4 .5];
 
-for i = 2:tf
-    DATA(i,7) = (DATA(i,4) + DATA(i,5) + DATA(i,6))-(DATA(i-1,4) + DATA(i-1,5) + DATA(i-1,6));
-end
-DATA(1:tf,7) = [DATA(1,4); DATA(2:tf,7)];
-
 %% Data matrix
 C = [1 0 0 0 0 0;     % We have data of S, I, R, D, and C.
      0 1 0 0 0 0;
@@ -183,7 +178,7 @@ end
         cRt = contact*R0;
         RtBArray = [];
         for j=1:tp/dt
-            RtB = mRt-((mRt-cRt)/(tp/dt))*j;
+            RtB = mRt-((mRt-cRt)/(tp/dt))*j+0.04*randn;
             RtBArray = [RtBArray RtB];
         end
         Rt = RtBArray;
