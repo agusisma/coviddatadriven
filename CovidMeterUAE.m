@@ -178,7 +178,7 @@ end
         cRt = contact*R0;
         RtBArray = [];
         for j=1:tp/dt
-            RtB = mRt-((mRt-cRt)/(tp/dt))*j;
+            RtB = mRt-((mRt-cRt)/(tp/dt))*j+0.04*randn;
             RtBArray = [RtBArray RtB];
         end
         Rt = RtBArray;
