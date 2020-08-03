@@ -1,5 +1,3 @@
-%% Research code by Agus Hasan
-
 % Disclaimer: the analysis and results are strictly only for educational
 % and research purposes and may contain errors.
 
